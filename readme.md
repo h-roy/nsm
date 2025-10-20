@@ -7,13 +7,10 @@
 
 Null-space Method (NSM) provides Optax-compatible gradient transformations that enforce equality
 constraints through differentiable least-squares solves. The package extracts and hardens the
-projection code from the `code-projected-constraints` research project.
+projection code from the `code-projected-constraints` research project. [TODO:Better summary]
 
-- ⚡ Projection transforms for Optax optimisers that keep constraint Jacobians satisfied
+- ⚡ Projection transforms for Optax optimisers that satisfy constraints
 - ⚡ Differentiable least-squares solvers (LSMR, normal equations) for constraint systems
-- ⚡ Works with PyTrees, JIT compilation, and automatic differentiation
-- ⚡ Designed for constrained training loops in JAX-based deep-learning workloads
-- ⚡ Documentation powered by MkDocs + mkdocstrings
 
 [_Let us know what you build with NSM!_](https://github.com/h-roy/deep-nsm/issues)
 
