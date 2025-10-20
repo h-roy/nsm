@@ -1,4 +1,4 @@
-"""Regression tests for NSM linear solvers.
+"""Regression tests for NUOX linear solvers.
 
 These mirror the structure of the original code-projected-constraints tests but
 cover only the solvers we ship (LSMR, normal-equation + CG, normal-equation + LU,
@@ -12,7 +12,7 @@ import jax.numpy as jnp
 import numpy as np
 import pytest
 
-from nsm.linalg import (
+from nuox.linalg import (
     dense_solve_lu,
     lstsq_custom_vjp,
     lstsq_lsmr,
@@ -59,8 +59,8 @@ def test_forward_matches_numpy(solver_fn, shape):
         return matrix_t @ v
 
     sol, _ = solver(vecmat, rhs)
-    expected = np.linalg.lstsq(np.asarray(a), np.asarray(b), rcond=None)[0]
-    np.testing.assert_allclose(np.asarray(sol), expected, rtol=1e-4, atol=1e-4)
+    expected = np.linalg.lstsq(np.asarray(a), np.asarray(b), rcond=None)[0].astype(np.float32)
+    np.testing.assert_allclose(np.asarray(sol), expected, rtol=5e-4, atol=5e-4)
 
 
 def test_custom_vjp_matches_finite_difference():

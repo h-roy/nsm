@@ -298,6 +298,12 @@ def lstsq_lsmr(
 
 
 def _sym_ortho(a, b):
+    a = jnp.asarray(a)
+    b = jnp.asarray(b)
+    dtype = jnp.result_type(a.dtype, b.dtype)
+    a = a.astype(dtype)
+    b = b.astype(dtype)
+
     idx = 3
     idx = jnp.where(jnp.abs(b) > jnp.abs(a), 2, idx)
     idx = jnp.where(a == 0, 1, idx)
@@ -376,7 +382,11 @@ def solve_materialize(dense_solve: Callable) -> Callable:
 
 def dense_solve_lu() -> Callable:
     def solve(A, b):
-        return jnp.linalg.solve(A, b), {}
+        dtype = A.dtype
+        a64 = A.astype(jnp.float64)
+        b64 = b.astype(jnp.float64)
+        sol64 = jnp.linalg.solve(a64, b64)
+        return sol64.astype(dtype), {}
 
     return solve
 

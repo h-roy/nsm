@@ -4,7 +4,7 @@ import numpy as np
 import pytest
 from jax import flatten_util
 
-from nsm.operators import vectorize_model
+from nuox.operators import vectorize_model
 
 # Test that vectorizing nns give the same result clean up all the flax shit
 

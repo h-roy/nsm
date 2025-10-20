@@ -1,4 +1,4 @@
-"""Minimal demo for nsm.operators.vectorize_model with Flax Linen."""
+"""Minimal demo for nuox.operators.vectorize_model with Flax Linen."""
 
 from __future__ import annotations
 
@@ -6,7 +6,7 @@ import jax
 import jax.numpy as jnp
 import numpy as np
 
-from nsm.operators import vectorize_model
+from nuox.operators import vectorize_model
 
 
 def main():

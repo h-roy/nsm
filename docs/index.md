@@ -1,12 +1,12 @@
-# Deep Null-Space Method: Constrained Optimization for Neural Networks
+# NUOX: Null-space Optimization for Neural Networks
 
-[![PyPI version](https://badge.fury.io/py/nsm.svg)](https://badge.fury.io/py/nsm)
+[![PyPI version](https://badge.fury.io/py/nuox.svg)](https://badge.fury.io/py/nuox)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Paper](https://img.shields.io/badge/arXiv-2106.0128-b31b1b.svg)](https://your-paper-link.com)
 
-**`nsm`** is a JAX-based library that provides powerful, scalable, and differentiable tools for structured machine learning problems. It integrates state-of-the-art adaptive least-squares solvers (like LSMR) into modern deep learning workflows.
+**`nuox`** is a JAX-based library that provides powerful, scalable, and differentiable tools for structured machine learning problems. It integrates state-of-the-art adaptive least-squares solvers (like LSMR) into modern deep learning workflows.
 
-Welcome to the official documentation for **`nsm`**, a JAX-based Python library for imposing complex constraints on neural networks.
+Welcome to the official documentation for **`nuox`**, a JAX-based Python library for imposing complex constraints on neural networks.
 
 This package provides a simple and powerful way to solve structured learning problems by implementing the **Null-Space Method**. Instead of relying on hand-tuned penalty terms or complex custom architectures, you can define almost any constraint as a simple function and use a standard optimizers like Adam to solve it.
 
@@ -14,10 +14,10 @@ This package provides a simple and powerful way to solve structured learning pro
 
 ## Installation
 
-You can install **`nsm`** directly from PyPI:
+You can install **`nuox`** directly from PyPI:
 
 ```bash
-pip install nsm
+pip install nuox
 ```
 
 ### The Core Idea: The Null-Space Method
@@ -30,17 +30,17 @@ The best part? This entire projection is handled by a fast, differentiable least
 
 ***
 
-### How to Use **`nsm`**
+### How to Use **`nuox`**
 
-With **`nsm`**, you can turn any [Optax](https://optax.readthedocs.io/en/latest/) optimizer into a constrained optimizer in just three steps, as shown in your repository's code.
+With **`nuox`**, you can turn any [Optax](https://optax.readthedocs.io/en/latest/) optimizer into a constrained optimizer in just three steps, as shown in your repository's code.
 
 #### **Step 1: Define Your Constraint as a Function**
 
 Create a Python function that takes your model's parameters and returns the current value of your constraint vector, $c(\theta)$. This function is the heart of your structured learning task.
 
     # Import the core components from your library
-    from nsm import make_project_grad
-    from nsm.linalg import lstsq_custom_vjp, lstsq_lsmr
+    from nuox import make_project_grad
+    from nuox.linalg import lstsq_custom_vjp, lstsq_lsmr
 
     # This function must return a JAX array representing the constraint violation.
     def constraint_fn(params, *model_args, **constraint_kwargs):
@@ -86,7 +86,7 @@ You can now use this `optimizer` in your training loop just like any other Optax
 
 ### Citing this Work
 
-If you use **`nsm`** in your research, please cite the following paper:
+If you use **`nuox`** in your research, please cite the following paper:
 
 ```
 @article{anonymous2025structured,

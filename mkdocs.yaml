@@ -1,7 +1,7 @@
 
-site_name: "NSM: Null-space optimization for neural networks"
+site_name: "NUOX: Null-space optimization for neural networks"
 site_author: "Hrittik Roy"
-site_url: https://h-roy.github.io/deep-nsm/
+site_url: https://h-roy.github.io/nuox/
 theme:
   name: material
   features:
@@ -15,8 +15,8 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-repo_url: https://github.com/h-roy/deep-nsm
-repo_name: h-roy/deep-nsm
+repo_url: https://github.com/h-roy/nuox
+repo_name: h-roy/nuox
 
 nav:
   - 'User Guide': 'index.md'
@@ -34,7 +34,7 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
-          paths: [src] # Tell mkdocstrings to look for code in the 'src' directory
+          paths: [nuox] # Point mkdocstrings at the packaged source directory
           options:
             show_root_heading: yes
             show_source: true # Optionally show the source code for functions

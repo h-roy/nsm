@@ -2,8 +2,8 @@ import jax.numpy as jnp
 import numpy as np
 import optax
 
-from nsm import make_project_grad
-from nsm.linalg import (
+from nuox import make_project_grad
+from nuox.linalg import (
     dense_solve_lu,
     lstsq_custom_vjp,
     lstsq_lsmr,

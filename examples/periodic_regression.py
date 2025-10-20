@@ -8,9 +8,9 @@ import optax
 from flax import linen as nn
 from jax import nn as jnn
 
-from nsm import make_project_grad
-from nsm.linalg import lstsq_custom_vjp, lstsq_lsmr
-from nsm.optax_nullspace import make_update_fn
+from nuox import make_project_grad
+from nuox.linalg import lstsq_custom_vjp, lstsq_lsmr
+from nuox.optax_nullspace import make_update_fn
 
 os.environ["XLA_FLAGS"] = (
     "--xla_gpu_enable_cublaslt=true --xla_gpu_cublas_fallback=true --xla_gpu_enable_command_buffer=''"
@@ -157,15 +157,15 @@ def main():
     fig, axes = plt.subplots(2, 1, figsize=(8, 8), constrained_layout=True)
     axes[0].plot(x_plot, y_true, label="Target", color="black", linewidth=2)
     axes[0].plot(x_plot, baseline_pred, label="Baseline", color="#E07A5F")
-    axes[0].plot(x_plot, constrained_pred, label="NSM", color="#3D405B")
+    axes[0].plot(x_plot, constrained_pred, label="NUOX", color="#3D405B")
     axes[0].set_ylabel("f(x)")
     axes[0].legend(loc="upper right")
 
     axes[1].plot(baseline_losses, label="Baseline loss", color="#E07A5F")
-    axes[1].plot(constrained_losses, label="NSM loss", color="#3D405B")
+    axes[1].plot(constrained_losses, label="NUOX loss", color="#3D405B")
     axes[1].set_xlabel("Step")
     axes[1].set_ylabel("Loss")
-    axes[1].twinx().plot(residuals, label="NSM residual", color="#2A9D8F")
+    axes[1].twinx().plot(residuals, label="NUOX residual", color="#2A9D8F")
     axes[1].legend(loc="upper right")
 
     path = "examples/periodic_regression.pdf"

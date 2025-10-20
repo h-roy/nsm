@@ -1,27 +1,27 @@
-# NSM: Null-space optimisation for JAX
+# NUOX: Null-space optimisation for JAX
 
-[![Actions status](https://github.com/h-roy/nsm/workflows/ci/badge.svg)](https://github.com/h-roy/nsm/actions)
-[![PyPI version](https://img.shields.io/pypi/v/nsm.svg)](https://pypi.org/project/nsm/)
-[![PyPI license](https://img.shields.io/pypi/l/nsm.svg)](https://pypi.org/project/nsm/)
-[![Python versions](https://img.shields.io/pypi/pyversions/nsm.svg)](https://pypi.org/project/nsm/)
+[![Actions status](https://github.com/h-roy/nuox/workflows/ci/badge.svg)](https://github.com/h-roy/nuox/actions)
+[![PyPI version](https://img.shields.io/pypi/v/nuox.svg)](https://pypi.org/project/nuox/)
+[![PyPI license](https://img.shields.io/pypi/l/nuox.svg)](https://pypi.org/project/nuox/)
+[![Python versions](https://img.shields.io/pypi/pyversions/nuox.svg)](https://pypi.org/project/nuox/)
 
-Null-space Method (NSM) provides Optax-compatible gradient transformations that enforce equality
+Null-space Method (NUOX) provides Optax-compatible gradient transformations that enforce equality
 constraints through differentiable least-squares solves. The package extracts and hardens the
 projection code from the `code-projected-constraints` research project. [TODO:Better summary]
 
 - ⚡ Projection transforms for Optax optimisers that satisfy constraints
 - ⚡ Differentiable least-squares solvers (LSMR, normal equations) for constraint systems
 
-[_Let us know what you build with NSM!_](https://github.com/h-roy/nsm/issues)
+[_Let us know what you build with NUOX!_](https://github.com/h-roy/nuox/issues)
 
 
 **Installation**
 
 ```commandline
-pip install nsm
+pip install nuox
 ```
 
-**Important:** NSM assumes you already installed JAX. Follow the
+**Important:** NUOX assumes you already installed JAX. Follow the
 [official instructions](https://github.com/google/jax#installation) for the correct wheel. For
 development you can grab all tooling dependencies at once:
 
@@ -44,8 +44,8 @@ import optax
 import jax
 import jax.numpy as jnp
 
-from nsm import make_project_grad
-from nsm.linalg import lstsq_custom_vjp, lstsq_lsmr
+from nuox import make_project_grad
+from nuox.linalg import lstsq_custom_vjp, lstsq_lsmr
 
 
 def constraint_fn(params, matrix):
@@ -84,16 +84,16 @@ def step(opt_state, params, batch):
 
 **Tutorials**
 
-- Walkthroughs and API docs: <https://h-roy.github.io/nsm/>
+- Walkthroughs and API docs: <https://h-roy.github.io/nuox/>
 - Lightweight demos inside `examples/`:
-  [TODO: periodic regression, soemthing diffusion and maybe something RL]
+  [TODO: periodic regression, soemthing diffusion and maybe something RL,c osntrained flow matching]
 
 **Citation**
 
-If NSM contributes to your research, please cite the projection-derivatives paper when appropriate. [TODO: Add arxiv link]
+If NUOX contributes to your research, please cite the projection-derivatives paper when appropriate. [TODO: Add arxiv link]
 
 
-## Develop with NSM
+## Develop with NUOX
 
 Install all test dependencies (JAX must already be set up for your accelerator):
 

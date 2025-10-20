@@ -2,8 +2,8 @@ import jax
 import jax.numpy as jnp
 import optax
 
-from nsm import make_project_grad
-from nsm.linalg import lstsq_custom_vjp, lstsq_lsmr
+from nuox import make_project_grad
+from nuox.linalg import lstsq_custom_vjp, lstsq_lsmr
 
 
 def constraint_fn(params, matrix):
