@@ -1,9 +1,9 @@
 # NUOX: Null-space optimisation for JAX
 
-[![Actions status](https://github.com/h-roy/nuox/workflows/ci/badge.svg)](https://github.com/h-roy/nuox/actions)
-[![PyPI version](https://img.shields.io/pypi/v/nuox.svg)](https://pypi.org/project/nuox/)
-[![PyPI license](https://img.shields.io/pypi/l/nuox.svg)](https://pypi.org/project/nuox/)
-[![Python versions](https://img.shields.io/pypi/pyversions/nuox.svg)](https://pypi.org/project/nuox/)
+[![Actions status](https://github.com/h-roy/nsm/workflows/ci/badge.svg)](https://github.com/h-roy/nsm/actions/)
+[![PyPI version](https://img.shields.io/pypi/v/nsm.svg)](https://pypi.org/project/nsm/)
+[![PyPI license](https://img.shields.io/pypi/l/nsm.svg)](https://pypi.org/project/nsm/)
+[![Python versions](https://img.shields.io/pypi/pyversions/nsm.svg)](https://pypi.org/project/nsm/)
 
 Null-space Method (NUOX) provides Optax-compatible gradient transformations that enforce equality
 constraints through differentiable least-squares solves. The package extracts and hardens the
