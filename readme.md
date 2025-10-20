@@ -1,6 +1,6 @@
 # NSM: Null-space optimisation for JAX
 
-[![Actions status](https://github.com/h-roy/nsm/workflows/ci/badge.svg)](https://github.com/h-roy/nsm/actions)
+[![Actions status](https://github.com/h-roy/nsm/workflows/ci/badge.svg)](https://github.com/h-roy/nsm/actions/)
 [![PyPI version](https://img.shields.io/pypi/v/nsm.svg)](https://pypi.org/project/nsm/)
 [![PyPI license](https://img.shields.io/pypi/l/nsm.svg)](https://pypi.org/project/nsm/)
 [![Python versions](https://img.shields.io/pypi/pyversions/nsm.svg)](https://pypi.org/project/nsm/)
