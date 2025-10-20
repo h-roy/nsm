@@ -10,7 +10,7 @@ constraints through differentiable least-squares solves. The package extracts an
 projection code from the `code-projected-constraints` research project.
 
 - ⚡ Projection transforms for Optax optimisers that keep constraint Jacobians satisfied
-- ⚡ Differentiable least-squares solvers (LSMR, normal equations, Kaczmarz) for constraint systems
+- ⚡ Differentiable least-squares solvers (LSMR, normal equations) for constraint systems
 - ⚡ Works with PyTrees, JIT compilation, and automatic differentiation
 - ⚡ Designed for constrained training loops in JAX-based deep-learning workloads
 - ⚡ Documentation powered by MkDocs + mkdocstrings
@@ -90,13 +90,8 @@ def step(opt_state, params, batch):
 - Walkthroughs and API docs: <https://h-roy.github.io/deep-nsm/>
 - Example notebooks from the original research repo:
   <https://github.com/h-roy/code-projected-constraints>
-- Lightweight demos inside `experiments/`:
-  `periodic_regression.py`, `conservative_field.py`, `incompressible_flow.py`,
-  `rotation_equivariance.py`, and `normalized_density.py` (each writes figures
-  to `experiments/outputs/`). Run from the repo root via
-  `PYTHONPATH=src python -m experiments.periodic_regression` (swap the module
-  name for other demos); direct `python experiments/<demo>.py` also works.
-
+- Lightweight demos inside `examples/`:
+  [TODO]
 
 **Citation**
 
