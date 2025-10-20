@@ -83,7 +83,7 @@ def step(opt_state, params, batch):
     params = optax.apply_updates(params, updates)
     return opt_state, params
 ```
-
+[TODO: Complete minimal example and make it run]
 
 **Tutorials**
 
@@ -91,7 +91,7 @@ def step(opt_state, params, batch):
 - Example notebooks from the original research repo:
   <https://github.com/h-roy/code-projected-constraints>
 - Lightweight demos inside `examples/`:
-  [TODO]
+  [TODO: periodic regression, soemthing diffusion and maybe something RL]
 
 **Citation**
 
