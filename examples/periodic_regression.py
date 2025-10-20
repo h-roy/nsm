@@ -83,7 +83,7 @@ def train_constrained(
         preds_shifted = predict(theta, points + period)
         return preds_shifted - preds
 
-    solver = lstsq_custom_vjp(lstsq_lsmr(maxiter=10))
+    solver = lstsq_custom_vjp(lstsq_lsmr(maxiter=50))
     transform = make_project_grad(
         constraint_fn,
         wm_epochs=wm_epochs,
@@ -114,13 +114,13 @@ def train_constrained(
 
 
 def make_data(num_points):
-    return jnp.linspace(-2 * jnp.pi, 2 * jnp.pi, num_points).reshape(-1, 1)
+    return jnp.linspace(-jnp.pi, jnp.pi, num_points).reshape(-1, 1)
 
 
 def main():
     key = jax.random.PRNGKey(0)
     x_train = make_data(500)
-    collocation = jax.random.normal(key, (200,)).reshape(-1, 1) * 4 - 2 * jnp.pi
+    collocation = jax.random.normal(key, (2000,)).reshape(-1, 1) * 4 - 2 * jnp.pi
     y_train = jnp.sin(x_train)
     model = MLP(output_dim=1, hidden_dim=16, num_layers=2, activation="tanh")
     model_key, key = jax.random.split(key)
@@ -146,8 +146,8 @@ def main():
         collocation,
         steps=5000,
         lr=3e-3,
-        gamma=0.1,
-        wm_epochs=20,
+        gamma=0.01,
+        wm_epochs=100,
     )
     x_plot = jnp.linspace(-3 * jnp.pi, 3 * jnp.pi, 1000).reshape(-1, 1)
     y_true = jnp.sin(x_plot).squeeze(-1)

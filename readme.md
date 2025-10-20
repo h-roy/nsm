@@ -85,8 +85,6 @@ def step(opt_state, params, batch):
 **Tutorials**
 
 - Walkthroughs and API docs: <https://h-roy.github.io/deep-nsm/>
-- Example notebooks from the original research repo:
-  <https://github.com/h-roy/code-projected-constraints>
 - Lightweight demos inside `examples/`:
   [TODO: periodic regression, soemthing diffusion and maybe something RL]
 
