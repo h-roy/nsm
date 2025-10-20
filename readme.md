@@ -1,6 +1,6 @@
 # NSM: Null-space optimisation for JAX
 
-[![Actions status](https://github.com/h-roy/deep-nsm/workflows/ci/badge.svg)](https://github.com/h-roy/deep-nsm/actions)
+[![Actions status](https://github.com/h-roy/nsm/workflows/ci/badge.svg)](https://github.com/h-roy/nsm/actions)
 [![PyPI version](https://img.shields.io/pypi/v/nsm.svg)](https://pypi.org/project/nsm/)
 [![PyPI license](https://img.shields.io/pypi/l/nsm.svg)](https://pypi.org/project/nsm/)
 [![Python versions](https://img.shields.io/pypi/pyversions/nsm.svg)](https://pypi.org/project/nsm/)
@@ -12,7 +12,7 @@ projection code from the `code-projected-constraints` research project. [TODO:Be
 - ⚡ Projection transforms for Optax optimisers that satisfy constraints
 - ⚡ Differentiable least-squares solvers (LSMR, normal equations) for constraint systems
 
-[_Let us know what you build with NSM!_](https://github.com/h-roy/deep-nsm/issues)
+[_Let us know what you build with NSM!_](https://github.com/h-roy/nsm/issues)
 
 
 **Installation**
@@ -84,7 +84,7 @@ def step(opt_state, params, batch):
 
 **Tutorials**
 
-- Walkthroughs and API docs: <https://h-roy.github.io/deep-nsm/>
+- Walkthroughs and API docs: <https://h-roy.github.io/nsm/>
 - Lightweight demos inside `examples/`:
   [TODO: periodic regression, soemthing diffusion and maybe something RL]
 
